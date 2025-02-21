@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body>
+    <div class="nav d-flex justify-content-around pt-4 pb-4 align-items-center bg-white">
+        <div>
+            <img src="./img/logo.png" alt="">
+        </div>
+        <nav class="navbar">
+
+            <div class="nav-link">
+                <a href="#" class="active">OUR TEAM</a>
+                <a href="#" onclick="openPersonalDetails()">PERSONAL DETAILS</a>
+                <a href="#" onclick="opencontact()">CONTACT US</a>
+            </div>
+        </nav>
+
+    </div>
+
+
+    <div class="non">
+        <div class="content" id="main-content">
+            <div>
+                <h1 class="pt-5 fw-bold heading">Our Team</h1>
+                <p class="pt-2">We believe that great ideas come to life through collaboration and innovation. Our team
+                    is a
+                    <br> diverse group of passionate professionals, each bringing unique skills and experiences to the
+                    table. <br> From creative designers and strategic thinkers to technical experts and problem-solvers,
+                    we
+                    are <br>united by a shared vision of delivering excellence in everything we do.
+                </p>
+                <p>Our mission is to empower businesses and individuals by creating innovative, sustainable, and <br>
+                    user-friendly designs. With a culture that values integrity, growth, and teamwork, we are <br>
+                    committed to
+                    creating meaningful solutions that make a difference. Whether it’s crafting cutting <br>edge
+                    designs,
+                    developing user-centered interfaces, or building sustainable solutions, our team <br> thrives on
+                    turning
+                    challenges into opportunities.</p>
+                <div class="d-flex gap-4">
+                    <div>
+                        <img src="./img/team3.png" alt="">
+                    </div>
+                    <div>
+                        <img src="./img/team2.png" alt="">
+                    </div>
+                    <div>
+                        <img src="./img/team1.png" alt="">
+                    </div>
+                    <div>
+                        <img src="./img/team.png" alt="">
+                    </div>
+
+                </div>
+            </div>
+            <div class="side-tabs d-flex">
+                <div class="personal-tab" onclick="openPersonalDetails()">Personal Details</div>
+                <div class="contact-tab" onclick="opencontact()">Contact Us</div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="personal-details" id="personalDetails">
+        <span class="close-btn" onclick="closePersonalDetails()">&times;</span>
+        <h1>Personal Details</h1>
+        <form action="" class="form">
+            <div class="form-group">
+                <i class='bx bxs-user'></i>
+                <input type="text" placeholder="Enter Your Name">
+            </div>
+            <div class="form-group">
+                <i class='bx bxs-phone'></i>
+                <input type="text" placeholder="Enter Your Mobile Number">
+            </div>
+            <div class="form-group mt-3">
+                <textarea placeholder="Enter Your Address" rows="4"></textarea>
+            </div>
+        </form>
+
+    </div>
+
+
+
+    <div class="contact" id="contact">
+        <span class="close-btn" onclick="closecontact()">&times;</span>
+        <h1>Contact Us</h1>
+        <p>We are a team of engineers, communication experts and innovators who specialise in developing <br> technology
+            propositions for the world around us. We noticed that in an overwhelming number of <br> use cases, technology was
+            not really the problem; mistrust came from how it was deployed by <br>creators and then understood and used by
+            consumers.</p>
+    </div>
+
+
+    <footer>
+        <div class="copyright pt-4 ">
+            <div>
+                <p>We’ve got one planet—let’s treat it right.</p>
+            </div>
+            <div>
+                <p>© 2024 Company Name</p>
+            </div>
+
+            <div class="d-flex gap-3">
+                <p>Privacy Policy</p>
+                <p>Terms & Conditions</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+
+
+        const personalDetailsBtn = document.getElementById("personal-details-btn");
+        const backToMainBtn = document.getElementById("back-to-main-btn");
+        const mainContent = document.getElementById("main-content");
+        const personalDetails = document.getElementById("personal-details");
+
+
+        personalDetailsBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            mainContent.classList.add("hidden");
+            personalDetails.classList.add("active");
+        });
+
+
+        backToMainBtn.addEventListener("click", () => {
+            mainContent.classList.remove("hidden");
+            personalDetails.classList.remove("active");
+        });
+        function openPersonalDetails() {
+            document.getElementById("personalDetails").classList.add("active");
+        }
+        function closePersonalDetails() {
+            document.getElementById("personalDetails").classList.remove("active");
+        }
+    </script>
+
+    <script>
+        function opencontact() {
+            document.getElementById("contact").classList.add("active");
+        }
+
+        function closecontact() {
+            document.getElementById("contact").classList.remove("active");
+        }
+
+    </script>
+</body>
+
+</html>
